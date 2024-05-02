@@ -1,5 +1,3 @@
-
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 
@@ -18,6 +16,7 @@ function App() {
         const resp = await fetch("https://restcountries.com/v3.1/all");
         const data = await resp.json();
         setCountries(data);
+        setFiltered(data); // Initially set filtered countries to all countries
       } catch (err) {
         console.log(err);
       }
@@ -30,7 +29,7 @@ function App() {
       country.name.common.toLowerCase().includes(search.toLowerCase())
     );
     setFiltered(data);
-  }, [search]);
+  }, [countries, search]);
 
   console.log(countries);
   return (
@@ -43,23 +42,29 @@ function App() {
         />
       </div>
       <div className="App">
-        {search === ""
-          ? countries.map((country) => {
+        {countries.length > 0 ? (
+          search === "" ? (
+            countries.map((country) => {
               return (
-                <div className="countryCard">
+                <div className="countryCard" key={country.name.common}>
                   <img src={country.flags.png} alt={country.flag}></img>
                   <p>{country.name.common}</p>
                 </div>
               );
             })
-          : filtered.map((country) => {
+          ) : (
+            filtered.map((country) => {
               return (
-                <div className="countryCard">
+                <div className="countryCard" key={country.name.common}>
                   <img src={country.flags.png} alt={country.flag}></img>
                   <p>{country.name.common}</p>
                 </div>
               );
-            })}
+            })
+          )
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </div>
   );
