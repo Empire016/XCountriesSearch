@@ -1,3 +1,4 @@
+import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 
@@ -30,9 +31,9 @@ function App() {
     setFiltered(data);
   }, [search]);
 
+  console.log(countries);
   return (
-    <div className="country-list-container">
-      <h1>Countries</h1>
+    <div>
       <div className="inp">
         <input
           type="text"
@@ -40,21 +41,21 @@ function App() {
           onChange={(e) => handleChange(e)}
         />
       </div>
-      <div className="country-list">
+      <div className="App">
         {search === ""
           ? countries.map((country) => {
               return (
-                <div className="country" key={country.name.common}>
-                  <img className="flag" src={country.flags.png} alt={country.flag}></img>
-                  <span>{country.name.common}</span>
+                <div className="countryCard">
+                  <img src={country.flags.png} alt={country.flag}></img>
+                  <p>{country.name.common}</p>
                 </div>
               );
             })
           : filtered.map((country) => {
               return (
-                <div className="country" key={country.name.common}>
-                  <img className="flag" src={country.flags.png} alt={country.flag}></img>
-                  <span>{country.name.common}</span>
+                <div className="countryCard">
+                  <img src={country.flags.png} alt={country.flag}></img>
+                  <p>{country.name.common}</p>
                 </div>
               );
             })}

@@ -1,52 +1,10 @@
-.country-list-container {
+
+.App {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.country-list {
-  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.country {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px rgba(2, 2, 2, 0.2);
-  transition: transform 0.3s ease-in-out;
-  border: 2px solid black;
-}
-
-.country:hover {
-  transform: scale(1.05);
-}
-
-.flag {
   width: 100%;
-  height: 70%;
-  border-radius: 10px 10px 0 0;
-}
-
-.country span {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  margin-top: 10px;
 }
 
 .inp {
@@ -62,9 +20,40 @@ h1 {
   border: 5px solid;
   padding: 10px;
   border-radius: 15px;
-}
 
+}
 .inp input:hover {
   outline: none;
   box-shadow: 0 0 5px 1px #333;
+}
+
+
+.countryCard {
+  padding: 2%;
+  margin: 2%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(2, 2, 2, 0.2);
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid black;
+  background-color: #5ad075;
+
+}
+.countryCard:hover {
+  transform: scale(1.05);
+}
+
+img {
+  width: 15vw;
+  height: 20vh;
+}
+
+p{
+  font-size: large;
+  font-weight: bolder;
+  text-align: center;
+}
+
+img{
+  width: 100%;
+  height: 80% ;
 }
