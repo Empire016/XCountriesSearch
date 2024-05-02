@@ -1,4 +1,3 @@
-
 .App {
   display: flex;
   flex-direction: row;
@@ -18,42 +17,15 @@
   font-size: larger;
   font-weight: bolder;
   border: 5px solid;
-  padding: 10px;
-  border-radius: 15px;
-
 }
-.inp input:hover {
-  outline: none;
-  box-shadow: 0 0 5px 1px #333;
-}
-
 
 .countryCard {
   padding: 2%;
   margin: 2%;
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px rgba(2, 2, 2, 0.2);
-  transition: transform 0.3s ease-in-out;
-  border: 2px solid black;
-  background-color: #5ad075;
-
-}
-.countryCard:hover {
-  transform: scale(1.05);
+  border: 3px solid;
 }
 
 img {
   width: 15vw;
   height: 20vh;
-}
-
-p{
-  font-size: large;
-  font-weight: bolder;
-  text-align: center;
-}
-
-img{
-  width: 100%;
-  height: 80% ;
 }
